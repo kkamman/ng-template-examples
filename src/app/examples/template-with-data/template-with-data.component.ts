@@ -6,8 +6,15 @@ import { Component } from '@angular/core';
     <ng-template #contentTemplate let-vegetable let-index="index">
         {{index}}. {{vegetable}}!
     </ng-template>
-    <app-template-with-data-container [contentTemplate]="contentTemplate">
+    <app-template-with-data-container [contentTemplate]="contentTemplate" [data]="vegetables">
     </app-template-with-data-container>
   `
 })
-export class TemplateWithDataComponent { }
+export class TemplateWithDataComponent {
+  vegetables: string[] = [
+    'Tomato',
+    'Cucumber',
+    'Cabbage',
+    'Onion'
+  ];
+}
