@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <ng-template #contentTemplate let-vegetable let-index="index">
         {{index}}. {{vegetable}}!
     </ng-template>
-    <app-template-with-data-container [contentTemplate]="contentTemplate" [data]="vegetables">
+    <app-template-with-data-container [contentTemplate]="contentTemplate" [data]="vegetables" title="Vegetables">
     </app-template-with-data-container>
   `
 })

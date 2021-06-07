@@ -4,9 +4,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
   selector: 'app-template-with-data-container',
   template: `
     <div class="container">
-        <div class="header-container">
-            Vegetables
-        </div>
+        <div class="header-container">{{title}}</div>
         <div *ngFor="let entry of data; index as i" class="content-container">
             <ng-container *ngTemplateOutlet="contentTemplate; context: { $implicit: entry, index: i }"></ng-container>
         </div>
@@ -14,6 +12,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
   `
 })
 export class TemplateWithDataContainerComponent {
+  @Input() title: string = '';
   @Input() data: string[] = [];
   @Input() contentTemplate!: TemplateRef<any>;
 }
